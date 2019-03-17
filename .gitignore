@@ -1,3 +1,10 @@
+# TeX Live installation artifacts.
+/install-tl-20190227
+/texlive
+
+# We will place generated PDFs here.
+/dist
+
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
@@ -260,5 +267,3 @@ TSWLatexianTemp*
 
 # standalone packages
 *.sta
-
-/dist
