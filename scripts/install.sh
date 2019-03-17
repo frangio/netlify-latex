@@ -27,4 +27,7 @@ install_texlive() {
   fi
 }
 
-install_texlive
+if ! install_texlive; then
+  rm -rf "$INSTALL_DIR"
+  exit 1
+fi
