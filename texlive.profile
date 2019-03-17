@@ -1,7 +1,7 @@
 # texlive.profile written on Sun Mar 17 22:36:54 2019 UTC
 # It will NOT be updated and reflects only the
 # installation profile at installation time.
-selected_scheme scheme-basic
+selected_scheme scheme-full
 TEXMFCONFIG $TEXMFSYSCONFIG
 TEXMFHOME $TEXMFLOCAL
 TEXMFVAR $TEXMFSYSVAR
