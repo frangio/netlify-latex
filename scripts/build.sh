@@ -4,7 +4,7 @@ set -o errexit
 
 scripts/install.sh
 
-texlive/2018/bin/x86_64-linux/pdflatex journal.tex
+buildhome/cache/texlive/2018/bin/x86_64-linux/pdflatex journal.tex
 
 mkdir dist
 
