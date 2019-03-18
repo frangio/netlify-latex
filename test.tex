@@ -1,0 +1,23 @@
+\documentclass{article}
+
+\usepackage{blindtext}
+\usepackage{pgfplots}
+
+\title{\LaTeX\ on Netlify}
+\author{Francisco Giordano}
+
+\begin{document}
+
+\maketitle
+
+\begin{center}
+  \begin{tikzpicture}
+    \begin{axis}[view={55}{45}]
+      \addplot3[surf, colormap/hot2, samples=41, domain=0:360] {sin(x)*sin(y)};
+    \end{axis}
+  \end{tikzpicture}
+\end{center}
+
+\blinddocument
+
+\end{document}
