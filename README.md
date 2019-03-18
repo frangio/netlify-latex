@@ -2,7 +2,7 @@
 
 **Automatic compilation and deployment of your LaTeX project on Netlify.**
 
-Start your own LaTeX on Netlify project by clicking on the link below.
+Start your own LaTeX on Netlify project by clicking on the button below.
 
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/frangio/netlify-latex)
 
