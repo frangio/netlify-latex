@@ -6,6 +6,6 @@ scripts/install.sh
 
 buildhome/cache/texlive/2018/bin/x86_64-linux/pdflatex journal.tex
 
-mkdir dist
+mkdir -p dist
 
 cp journal.pdf dist
