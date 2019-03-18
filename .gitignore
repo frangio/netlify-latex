@@ -267,3 +267,7 @@ TSWLatexianTemp*
 
 # standalone packages
 *.sta
+
+# pgfplots
+*.dat
+*.script
