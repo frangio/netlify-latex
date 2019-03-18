@@ -1,11 +1,14 @@
 # texlive.profile written on Sun Mar 17 22:36:54 2019 UTC
 # It will NOT be updated and reflects only the
 # installation profile at installation time.
-selected_scheme scheme-full
+selected_scheme scheme-custom
 TEXMFCONFIG $TEXMFSYSCONFIG
 TEXMFHOME $TEXMFLOCAL
 TEXMFVAR $TEXMFSYSVAR
 binary_x86_64-linux 1
+collection-basic 1
+collection-binextra 1
+collection-latex 1
 instopt_adjustpath 1
 instopt_adjustrepo 1
 instopt_letter 0

@@ -1,10 +1,23 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 set -o errexit
 
 scripts/install.sh
 
-buildhome/cache/texlive/2018/bin/x86_64-linux/pdflatex journal.tex
+# We use $DEPLOY_URL to detect the Netlify environment.
+if [ -v DEPLOY_URL ]; then
+  : ${NETLIFY_BUILD_BASE="/opt/buildhome"}
+else
+  : ${NETLIFY_BUILD_BASE="$PWD/buildhome"}
+fi
+
+TEXLIVE="$NETLIFY_BUILD_BASE/cache/texlive/2018"
+
+TEXLIVE_BIN="$TEXLIVE/bin/x86_64-linux"
+
+TEXLIVEONFLY="$TEXLIVE/texmf-dist/scripts/texliveonfly/texliveonfly.py"
+
+python "$TEXLIVEONFLY" --texlive_bin="$TEXLIVE_BIN" -c latexmk -a -pdf journal.tex
 
 mkdir -p dist
 
