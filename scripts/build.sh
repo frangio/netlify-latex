@@ -21,4 +21,4 @@ python "$TEXLIVEONFLY" --texlive_bin="$TEXLIVE_BIN" -c latexmk -a -pdf journal.t
 
 mkdir -p dist
 
-cp journal.pdf dist
+cp *.pdf dist
