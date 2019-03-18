@@ -17,7 +17,9 @@ TEXLIVE_BIN="$TEXLIVE/bin/x86_64-linux"
 
 TEXLIVEONFLY="$TEXLIVE/texmf-dist/scripts/texliveonfly/texliveonfly.py"
 
-python "$TEXLIVEONFLY" --texlive_bin="$TEXLIVE_BIN" -c latexmk -a -pdf journal.tex
+export PATH="$TEXLIVE_BIN:$PATH"
+
+python "$TEXLIVEONFLY" -c latexmk -a -pdf journal.tex
 
 mkdir -p dist
 
