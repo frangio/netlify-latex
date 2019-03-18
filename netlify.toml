@@ -1,0 +1,7 @@
+[build]
+  command = "scripts/build.sh"
+
+[[redirects]]
+  from = "/"
+  to = "/main.pdf"
+  status = 200
