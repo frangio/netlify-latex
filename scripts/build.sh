@@ -19,7 +19,7 @@ TEXLIVEONFLY="$TEXLIVE/texmf-dist/scripts/texliveonfly/texliveonfly.py"
 
 export PATH="$TEXLIVE_BIN:$PATH"
 
-python "$TEXLIVEONFLY" -c latexmk -a -pdf journal.tex
+python "$TEXLIVEONFLY" -c latexmk -a "-g -pdf -synctex=1 -interaction=nonstopmode" test.tex
 
 mkdir -p dist
 
