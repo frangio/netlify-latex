@@ -2,6 +2,8 @@
 
 **Automatically compile and publish your LaTeX project on Netlify.**
 
+See this repository published live at [`latex.netlify.com`](https://latex.netlify.com).
+
 Start your own project by clicking on the button below.
 
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/frangio/netlify-latex)
