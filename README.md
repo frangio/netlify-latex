@@ -1,6 +1,6 @@
 # LaTeX on Netlify
 
-**Automatic compilation and deployment of your LaTeX project on Netlify.**
+**Automatically compile and publish your LaTeX project on Netlify.**
 
 Start your own LaTeX on Netlify project by clicking on the button below.
 
