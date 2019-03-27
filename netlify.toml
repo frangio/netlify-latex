@@ -1,5 +1,5 @@
 [build]
-  command = "scripts/build.sh"
+  command = "bash build.sh"
 
 [[redirects]]
   from = "/"
