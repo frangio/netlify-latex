@@ -97,4 +97,4 @@ urlencode() {
   echo "${encoded}"
 }
 
-echo "/ /$(urlencode "${1/%.tex/.pdf}") 200" > dist/_redirects
+echo "/ /$(urlencode "${1/%.tex/.pdf}") 302" > dist/_redirects
