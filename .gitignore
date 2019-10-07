@@ -1,5 +1,6 @@
 # TeX Live installation artifacts.
 /install-tl-20190227
+/install-tl-20191006
 /buildhome
 
 # We will place generated PDFs here.
