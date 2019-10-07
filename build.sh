@@ -12,13 +12,13 @@ fi
 NETLIFY_CACHE_DIR="$NETLIFY_BUILD_BASE/cache"
 
 TEXLIVE_DIR="$NETLIFY_CACHE_DIR/texlive"
-TEXLIVE_BIN="$TEXLIVE_DIR/2018/bin/x86_64-linux"
+TEXLIVE_BIN="$TEXLIVE_DIR/2019/bin/x86_64-linux"
 
 INSTALL_TL="install-tl-unx.tar.gz"
 INSTALL_TL_VERSION="$(tar tf "$INSTALL_TL" | grep -om1 '^install-tl-[0-9]*')"
 INSTALL_TL_SUCCESS="$NETLIFY_CACHE_DIR/$INSTALL_TL_VERSION-success"
 
-TEXLIVEONFLY="$TEXLIVE_DIR/2018/texmf-dist/scripts/texliveonfly/texliveonfly.py"
+TEXLIVEONFLY="$TEXLIVE_DIR/2019/texmf-dist/scripts/texliveonfly/texliveonfly.py"
 
 TEXLIVE_PROFILE="\
 selected_scheme scheme-custom
@@ -47,10 +47,10 @@ tlpdbopt_sys_bin /usr/local/bin
 tlpdbopt_sys_info /usr/local/share/info
 tlpdbopt_sys_man /usr/local/share/man
 tlpdbopt_w32_multi_user 1
-TEXDIR $TEXLIVE_DIR/2018
+TEXDIR $TEXLIVE_DIR/2019
 TEXMFLOCAL $TEXLIVE_DIR/texmf-local
-TEXMFSYSCONFIG $TEXLIVE_DIR/2018/texmf-config
-TEXMFSYSVAR $TEXLIVE_DIR/2018/texmf-var
+TEXMFSYSCONFIG $TEXLIVE_DIR/2019/texmf-config
+TEXMFSYSVAR $TEXLIVE_DIR/2019/texmf-var
 "
 
 if [ ! -e "$INSTALL_TL_SUCCESS" ]; then
