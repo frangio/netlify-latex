@@ -357,7 +357,7 @@
 
 \medskip
 
-Start your own project by clicking on the button below.
+Start publishing your document automatically by clicking on the button below. It will clone this repository in your account and set up a Netlify site connected to it.
 
 \bigskip
 
@@ -365,10 +365,11 @@ Start your own project by clicking on the button below.
   \href{https://app.netlify.com/start/deploy?repository=https://github.com/frangio/netlify-latex}{\deploybutton}
 \end{center}
 
+Edit the \texttt{main.tex} file or replace it with your own LaTeX file. Every update to your cloned repository will trigger a republish of the rendered document on Netlify.
+
 \medskip
 
-\paragraph{Notes}
-The first deploy will take about 3 minutes to download and install a minimal \LaTeX\ environment. The following deploys will be faster. Any packages required are downloaded on the fly using \href{https://www.ctan.org/pkg/texliveonfly}{\texttt{texliveonfly}}.
+\paragraph{Notes} The initial setup will take about 3 minutes to download and install a minimal LaTeX environment. All the necessary packages will be downloaded the first time they are seen by \href{https://www.ctan.org/pkg/texliveonfly}{\texttt{texliveonfly}}, without which this project would have been impractical.
 
 \vfill
 
