@@ -74,9 +74,6 @@ fi
 
 export PATH="$TEXLIVE_BIN:$PATH"
 
-tlmgr update -self -all
-tlmgr install xetex
-
 python "$TEXLIVEONFLY" -c latexmk -a "-g -pdf -synctex=1 -interaction=nonstopmode" "$@"
 
 mkdir -p dist
