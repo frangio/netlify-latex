@@ -32,7 +32,6 @@ TEXMFHOME \$TEXMFLOCAL
 TEXMFVAR \$TEXMFSYSVAR
 binary_x86_64-linux 1
 collection-basic 1
-collection-binextra 1
 collection-latex 1
 instopt_adjustpath 1
 instopt_adjustrepo 1
@@ -65,6 +64,7 @@ if [ ! -e "$INSTALL_TL_SUCCESS" ]; then
 
   echo "[$0] Installing TeX Live..."
   "$INSTALL_TL_VERSION"/install-tl --profile=texlive.profile
+  $TEXLIVE_BIN/tlmgr install latexmk texliveonfly
   echo "[$0] Installed TeX Live."
 
   touch "$INSTALL_TL_SUCCESS"
