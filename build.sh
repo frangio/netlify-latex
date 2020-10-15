@@ -19,9 +19,9 @@ NETLIFY_CACHE_DIR="$NETLIFY_BUILD_BASE/cache"
 TEXLIVE_DIR="$NETLIFY_CACHE_DIR/texlive"
 TEXLIVE_BIN="$TEXLIVE_DIR/2020/bin/x86_64-linux"
 
+INSTALL_TL_URL="http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz"
 INSTALL_TL="install-tl-unx.tar.gz"
-INSTALL_TL_VERSION="$(tar tf "$INSTALL_TL" | grep -om1 '^install-tl-[0-9]*')"
-INSTALL_TL_SUCCESS="$NETLIFY_CACHE_DIR/$INSTALL_TL_VERSION-success"
+INSTALL_TL_SUCCESS="$NETLIFY_CACHE_DIR/install-tl-success"
 
 TEXLIVEONFLY="$TEXLIVE_DIR/2020/texmf-dist/scripts/texliveonfly/texliveonfly.py"
 
@@ -58,12 +58,13 @@ TEXMFSYSCONFIG $TEXLIVE_DIR/2020/texmf-config
 TEXMFSYSVAR $TEXLIVE_DIR/2020/texmf-var
 "
 
-echo "$TEXLIVE_PROFILE" > texlive.profile
-
 if [ ! -e "$INSTALL_TL_SUCCESS" ]; then
-  tar xf "$INSTALL_TL"
-
   echo "[$0] Installing TeX Live..."
+
+  curl -L "$INSTALL_TL_URL" -o "$INSTALL_TL"
+  tar xf "$INSTALL_TL"
+  echo "$TEXLIVE_PROFILE" > texlive.profile
+  INSTALL_TL_VERSION="$(tar tf "$INSTALL_TL" | grep -om1 '^install-tl-[0-9]*')"
   "$INSTALL_TL_VERSION"/install-tl --profile=texlive.profile
   echo "[$0] Installed TeX Live."
 
