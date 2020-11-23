@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -o errexit
+set -euo pipefail
 
 if [ "$#" -eq 0 ]; then
   echo "usage: bash $0 main.tex" >&2
@@ -61,11 +61,9 @@ TEXMFSYSVAR $TEXLIVE_DIR/2020/texmf-var
 if [ ! -e "$INSTALL_TL_SUCCESS" ]; then
   echo "[$0] Installing TeX Live..."
 
-  curl -L "$INSTALL_TL_URL" -o "$INSTALL_TL"
-  tar xf "$INSTALL_TL"
+  curl -L "$INSTALL_TL_URL" | tar xz --one-top-level=itl --strip-components=1
   echo "$TEXLIVE_PROFILE" > texlive.profile
-  INSTALL_TL_VERSION="$(tar tf "$INSTALL_TL" | grep -om1 '^install-tl-[0-9]*')"
-  "$INSTALL_TL_VERSION"/install-tl --profile=texlive.profile
+  itl/install-tl --profile=texlive.profile
   echo "[$0] Installed TeX Live."
 
   touch "$INSTALL_TL_SUCCESS"
