@@ -63,7 +63,7 @@ if [ ! -e "$INSTALL_TL_SUCCESS" ]; then
   curl -L "$INSTALL_TL_URL" | tar xz --one-top-level=itl --strip-components=1
   echo "$TEXLIVE_PROFILE" > texlive.profile
   itl/install-tl --profile=texlive.profile
-  $TEXLIVE_BIN/tlmgr install latexmk texliveonfly
+  "$TEXLIVE_BIN/tlmgr" install latexmk texliveonfly
   echo "[$0] Installed TeX Live."
 
   touch "$INSTALL_TL_SUCCESS"
