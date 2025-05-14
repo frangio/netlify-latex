@@ -2,7 +2,7 @@
 
 **Automatically compile and publish your LaTeX document on Netlify.**
 
-See this repository published live at [`latex.netlify.com`](https://latex.netlify.com).
+See this repository published live at [`latex.netlify.app`](https://latex.netlify.app).
 
 Start publishing your document automatically by clicking on the button below. It will clone this repository in your account and set up a Netlify site connected to it.
 
